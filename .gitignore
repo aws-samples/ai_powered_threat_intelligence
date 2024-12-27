@@ -1,0 +1,44 @@
+# Folders
+.hypothesis/
+.idea/*
+.pytest_cache/
+.scannerwork/
+.vscode/
+cdk.out/
+coverage/
+htmlcov/
+lambda_python/layers/*/*/
+__pycache__/
+.venv
+env
+
+# Files
+*.d.ts
+*.pyc
+*.zip
+.DS_Store
+.idea
+.coverage
+.npmrc
+.nvmrc
+bandit.json
+cdk/cdk.context.json
+coverage.xml
+package-lock.json
+safety.json
+semgrep.json
+test-report.xml
+awstoe
+ignoreme.bat
+cdk/floating_license_server/resources/api/Dockerfile*
+
+# License reports
+license_report
+license_report*.xlsx
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+cdk/cdk.context.json
+.idea/aws.xml
+.tox

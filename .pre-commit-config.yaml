@@ -1,0 +1,105 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        alias: lint
+      - id: end-of-file-fixer
+        alias: lint
+        exclude: ^.*\.egg-info/
+      - id: check-merge-conflict
+        alias: lint
+      - id: check-case-conflict
+        alias: lint
+      - id: check-json
+        alias: lint
+      - id: check-toml
+        alias: lint
+        exclude: tests/fixtures/invalid_lock/poetry\.lock
+      - id: check-yaml
+        alias: lint
+        args: [--unsafe]
+      - id: pretty-format-json
+        alias: lint
+        args: [--autofix, --no-ensure-ascii, --no-sort-keys]
+      - id: check-ast
+        alias: lint
+      - id: check-executables-have-shebangs
+        alias: lint
+      - id: check-added-large-files
+        alias: lint
+        args: [--maxkb=15000]
+      - id: check-symlinks
+        alias: lint
+      - id: detect-aws-credentials
+        alias: lint
+        args: [--allow-missing-credentials]
+      - id: debug-statements
+        alias: lint
+      - id: check-docstring-first
+        alias: lint
+      - id: check-builtin-literals
+        alias: lint
+      - id: end-of-file-fixer
+        alias: lint
+      - id: no-commit-to-branch
+        name: no-commit-to-main
+        args: [--branch, main]
+      - id: mixed-line-ending
+        alias: lint
+        args: [--fix=lf]
+      - id: requirements-txt-fixer
+  - repo: https://github.com/lyz-code/yamlfix/
+    rev: 1.9.0
+    hooks:
+      - id: yamlfix
+        alias: lint
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        alias: lint
+  - repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+      - id: black
+        alias: lint
+        args: [--config, pyproject.toml]
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+        alias: lint
+        args: [--config, .flake8]
+        additional_dependencies:
+          - flake8-black>=0.3.6
+#          - flake8-docstrings>=1.5.0
+#          - flake8-import-order
+#          - pycodestyle>=2.5.0
+#          - pydocstyle>=4.0.0
+  - repo: https://github.com/pre-commit/pre-commit
+    rev: v2.21.0
+    hooks:
+      - id: validate_manifest
+        alias: lint
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.39.1
+    hooks:
+      - id: commitizen
+        alias: lint
+  - repo: https://github.com/python-poetry/poetry
+    rev: 1.8.1
+    hooks:
+      - id: poetry-check
+        alias: lint
+      - id: poetry-lock
+        alias: lock
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        alias: security
+        args: [-c, pyproject.toml, -ll, -r, cdk/]
+        always_run: true
+        additional_dependencies: ['bandit[toml]']
