@@ -11,11 +11,11 @@ Without a unified, AI-powered approach, organizations are at risk of delayed thr
 
 ### Structure
 - app
-  - code of the actual application (Lambda function) including unit tests 
+  - code of the actual application (Lambda function) including unit tests
 - cdk
   - code for the infrastructure including unit tests
 - docs
-  - Documentation 
+  - Documentation
 
 
 ### Pre-requisites
@@ -24,7 +24,7 @@ Without a unified, AI-powered approach, organizations are at risk of delayed thr
 - Poetry is needed to managed the python packages
    - To install poetry run
    - ```
-     pip intstall poetry
+     pip install poetry
      ```
 
 ### Setting up the environment
