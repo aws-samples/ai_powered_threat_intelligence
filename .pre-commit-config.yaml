@@ -51,7 +51,7 @@ repos:
         args: [--fix=lf]
       - id: requirements-txt-fixer
   - repo: https://github.com/lyz-code/yamlfix/
-    rev: 1.9.0
+    rev: 1.16.1
     hooks:
       - id: yamlfix
         alias: lint
@@ -61,7 +61,7 @@ repos:
       - id: isort
         alias: lint
   - repo: https://github.com/psf/black
-    rev: 22.10.0
+    rev: 24.10.0
     hooks:
       - id: black
         alias: lint
@@ -74,10 +74,6 @@ repos:
         args: [--config, .flake8]
         additional_dependencies:
           - flake8-black>=0.3.6
-#          - flake8-docstrings>=1.5.0
-#          - flake8-import-order
-#          - pycodestyle>=2.5.0
-#          - pydocstyle>=4.0.0
   - repo: https://github.com/pre-commit/pre-commit
     rev: v2.21.0
     hooks:
